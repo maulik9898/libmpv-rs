@@ -37,7 +37,13 @@
 
 use std::os::raw as ctype;
 
+#[cfg(feature = "0.34")]
+pub const MPV_CLIENT_API_MAJOR: ctype::c_ulong = 1;
+#[cfg(feature = "0.34")]
+pub const MPV_CLIENT_API_MINOR: ctype::c_ulong = 109;
+#[cfg(feature = "0.35")]
 pub const MPV_CLIENT_API_MAJOR: ctype::c_ulong = 2;
+#[cfg(feature = "0.35")]
 pub const MPV_CLIENT_API_MINOR: ctype::c_ulong = 0;
 pub const MPV_CLIENT_API_VERSION: ctype::c_ulong =
     MPV_CLIENT_API_MAJOR << 16 | MPV_CLIENT_API_MINOR;

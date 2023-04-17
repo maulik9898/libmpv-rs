@@ -25,7 +25,7 @@ use std::process::Command;
 #[cfg(not(feature = "build_libmpv"))]
 fn main() {}
 
-#[cfg(all(feature = "build_libmpv", target_os = "windows"))]
+#[cfg(all(target_os = "windows"))]
 fn main() {
     let source = env::var("MPV_SOURCE").expect("env var `MPV_SOURCE` not set");
 

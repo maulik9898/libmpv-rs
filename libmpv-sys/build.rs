@@ -29,6 +29,10 @@ fn main() {
     )
     .expect("Couldn't find pregenerated bindings!");
 
+    #[cfg(all( target_os = "windows"))]
+    println!("cargo:rustc-link-lib=libmpv");
+
+    #[cfg(not(target_os = "windows"))]
     println!("cargo:rustc-link-lib=mpv");
 }
 
@@ -50,5 +54,9 @@ fn main() {
         .write_to_file(out_path.join("bindings.rs"))
         .expect("Couldn't write bindings!");
 
+    #[cfg(all( target_os = "windows"))]
+    println!("cargo:rustc-link-lib=libmpv");
+
+    #[cfg(not(target_os = "windows"))]
     println!("cargo:rustc-link-lib=mpv");
 }
