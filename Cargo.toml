@@ -41,7 +41,6 @@ crossbeam = "0.7"
 default = ["protocols", "render",  "0.35"]
 protocols = [] # Enable custom protocol callbacks
 render = [] # Enable custom rendering
-build_libmpv = [] # build libmpv automatically, provided MPV_SOURCE is set
 "0.34" = []
 "0.35" = []
 
